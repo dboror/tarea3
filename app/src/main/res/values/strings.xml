@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tarea3</string>
+    <string name="str_cat">Gato</string>
+    <string name="str_dog">Perro</string>
+    <string name="str_bird">Pajaro</string>
+    <string name="str_button_save">Grabar</string>
+    <string name="str_button_view">Consultar</string>
+    <string name="str_nombre_mascota">Nombre de la Mascota</string>
+    <string name="str_fecha_nacimiento">Fecha de nacimiento</string>
+</resources>

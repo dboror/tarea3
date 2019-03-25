@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:background="#ffffff">
+
+    <ImageView
+        android:id="@+id/imgPet"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/dog"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_nombre_mascota"/>
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_margin="10dp"
+        android:hint=""
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_fecha_nacimiento"/>
+    <EditText
+        android:id="@+id/txtDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date"
+        android:text=""
+        android:layout_margin="10dp"
+        android:hint="yyyy-mm-dd"
+        android:textSize="30sp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:id="@+id/rbtnPet">
+        <RadioButton
+            android:id="@+id/rbtnBird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_bird"
+            android:layout_margin="10dp"
+            android:textSize="25sp"/>
+        <RadioButton
+            android:id="@+id/rbtnDog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_dog"
+            android:layout_margin="10dp"
+            android:textSize="25sp"/>
+        <RadioButton
+            android:id="@+id/rbtnCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_cat"
+
+            android:layout_margin="10dp"
+            android:textSize="25sp"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnGrabar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_button_save"
+        android:background="#32a6c6"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/btnConsultar"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_height="wrap_content"
+        android:text="@string/str_button_view"
+        android:background="#ff9966"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"/>
+
+
+</LinearLayout>
