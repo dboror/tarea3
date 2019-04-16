@@ -1,8 +1,12 @@
 package com.galileo.tarea3;
 
 import android.content.Context;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
+import android.icu.util.TimeZone;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +17,11 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class MascotasAdapter extends ArrayAdapter<Mascota> {
     private List<Mascota> lista;
@@ -47,8 +55,20 @@ public class MascotasAdapter extends ArrayAdapter<Mascota> {
             txtType = v.findViewById(R.id.txtvTipo);
             imageView = v.findViewById(R.id.imagevView);
 
+            String _Fecha = "";
+            try {
+                DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                Date date1 = new java.util.Date();
+                Date date2 = df.parse(lista.get(position).getFechanacimiento()); // df.parse("00:00:00_2013.01.01");
+                long diff = date1.getTime() - date2.getTime();
+                _Fecha = String.valueOf( diff / 1000 / 60 / 60 / 24 / 365);
+            } catch (ParseException e) {
+                Log.e("TEST", "Exception", e);
+            }
+
+
             txtName.setText(lista.get(position).getNombre());
-            txtDate.setText(lista.get(position).getFechanacimiento());
+            txtDate.setText(_Fecha + " Años");
             txtType.setText(lista.get(position).getTipo());
 
             switch (txtType.getText().toString()){
